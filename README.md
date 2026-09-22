@@ -67,10 +67,10 @@ Java 의 AF_UNIX 소켓이 `%TEMP%` 아래에서 실패해 Gradle 이 "Unable to
 ## 출시 체크리스트
 
 ### 1. AdMob
-- [ ] https://admob.google.com 에서 Android 앱 "Random Roulette" 등록 (스토어 연결은 Play 게시 후)
-- [ ] 광고 단위 3개 생성: 배너 / 전면 / 보상형
-- [ ] `lib/ads/ad_ids.dart` 의 `_androidReal` 을 실제 ID 로 교체 (지금은 `_androidTest` 를 가리킴)
-- [ ] `android/app/src/main/AndroidManifest.xml` 의 `APPLICATION_ID` 교체 (지금은 Google 테스트 App ID)
+- [x] https://admob.google.com 에서 Android 앱 "Random Roulette" 등록 (App ID `ca-app-pub-7493209423244427~6363975167`, 스토어 연결은 Play 게시 후)
+- [x] 광고 단위 3개 생성: 배너 / 전면 / 보상형
+- [x] `lib/ads/ad_ids.dart` 의 `_androidReal` 실제 ID 로 교체
+- [x] `android/app/src/main/AndroidManifest.xml` 의 `APPLICATION_ID` 교체
 - [ ] `ios/Runner/Info.plist` 의 `GADApplicationIdentifier` 교체
 - [ ] 개발 중 실제 ID로 광고 클릭 금지 (계정 정지 사유). 테스트 기기 등록 권장.
 - [x] AdMob 결제·세금 정보 (오늘의 운세와 같은 계정)
@@ -84,10 +84,11 @@ Java 의 AF_UNIX 소켓이 `%TEMP%` 아래에서 실패해 Gradle 이 "Unable to
 - [x] 릴리즈 서명 키: `android/upload-keystore.jks` + `android/key.properties` (git 제외 — **반드시 백업**, 별칭 `upload`, PKCS12, 2026-09-22 생성)
 - [x] 앱 아이콘: `tool/make_icon.py` → `dart run flutter_launcher_icons`
 - [x] `flutter build appbundle --release` → `build/app/outputs/bundle/release/app-release.aab` (targetSdk 36)
-- [ ] Play Console 개발자 계정 본인 확인 완료 후 앱 생성 (개발자 ID 6377501318049789563)
+- [x] Play Console 앱 생성 (2026-09-22, 앱 ID 4976404931146349464, 이름 "Random Roulette: Spin & Decide", 카테고리 엔터테인먼트, 타겟층 18+, 콘텐츠 등급 전체이용가, 데이터 보안·광고 선언 완료)
 - [x] 스토어 등록 정보: `store/listing.md` — ko/en/ja/zh-CN 설명문(ASO 키워드 반영), 카테고리, 데이터 보안 양식 답변
 - [x] 그래픽: `store/icon-512.png`, `store/<ko|en|ja|zh>/feature-graphic.png`, `store/<lang>/screenshots/01~04.png`
-- [ ] 내부 테스트 → 비공개 테스트(테스터 12명, 14일) → 프로덕션 (신규 개인 계정 요건)
+- [x] 내부 테스트 1.0.0 (1) 게시 (2026-09-22, 테스터 목록 "Internal testers" + "오늘의 운세 테스터")
+- [ ] 비공개 테스트(테스터 12명, 14일) → 프로덕션 액세스 신청 (신규 개인 계정 요건)
 - [ ] 프로덕션 출시 후 AdMob "앱 스토어 연결"
 
 ### 4. iOS 출시 (Mac 필요)

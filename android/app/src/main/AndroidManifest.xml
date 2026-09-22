@@ -21,10 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <!-- AdMob App ID. 출시 전 AdMob 에서 발급받은 실제 App ID 로 교체 (지금은 Google 테스트 App ID) -->
+        <!-- AdMob App ID (Random Roulette, 2026-09-22 발급) -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
+            android:value="ca-app-pub-7493209423244427~6363975167"/>
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />

@@ -8,13 +8,16 @@ import 'package:flutter/foundation.dart';
 ///   개발 중 실제 광고를 클릭하면 무효 트래픽으로 계정이 정지될 수 있으므로.
 /// - 릴리즈 빌드(`--release`, 스토어 배포): 실제 ID.
 ///
-/// Android 실제 ID: TODO — AdMob 에 "Random Roulette" 앱 등록 후 아래 _androidReal 교체.
+/// Android 실제 ID: AdMob 앱 "Random Roulette" (ca-app-pub-7493209423244427~6363975167), 2026-09-22 등록.
 class AdIds {
   AdIds._();
 
   // ── 실제 ID ─────────────────────────────────────────────────────────
-  // TODO(AdMob): "Random Roulette" 앱 등록 후 발급받은 광고 단위 ID 로 교체. 교체 전까지는 테스트 ID.
-  static const _androidReal = _androidTest;
+  static const _androidReal = _Ids(
+    banner: 'ca-app-pub-7493209423244427/7923276873',
+    interstitial: 'ca-app-pub-7493209423244427/3984031860',
+    rewarded: 'ca-app-pub-7493209423244427/6282892146',
+  );
 
   // TODO(iOS): AdMob 에서 iOS 앱 등록 후 교체
   static const _iosReal = _iosTest;
