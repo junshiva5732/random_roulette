@@ -1,7 +1,7 @@
 name: random_roulette
 description: "랜덤 룰렛 — 점심 메뉴, 벌칙, 순서 정하기. AdMob 광고(배너 / 전면 / 보상형)로 수익화."
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.0.1+2
 
 environment:
   sdk: ^3.8.0-149.0.dev
