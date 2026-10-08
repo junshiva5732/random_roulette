@@ -9,6 +9,7 @@ import 'screens/home_screen.dart';
 import 'services/roulette_store.dart';
 import 'services/storage.dart';
 import 'theme/wheel_themes.dart';
+import 'moament_splash.dart';
 
 /// 스크린샷 촬영용 언어 강제 (디버그 빌드에서만 동작).
 /// 예: flutter build apk --debug --dart-define=LOCALE=ja
@@ -62,6 +63,7 @@ class _RouletteAppState extends State<RouletteApp> {
       child: ListenableBuilder(
         listenable: _locale,
         builder: (context, _) => MaterialApp(
+          builder: (context, child) => MoamentSplash(child: child!),
           onGenerateTitle: (context) => S.of(context).appTitle,
           debugShowCheckedModeBanner: false,
           theme: ThemeData(colorSchemeSeed: AppColors.seed, useMaterial3: true),
