@@ -24,7 +24,7 @@
         <!-- AdMob App ID (Random Roulette, 2026-09-22 발급) -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-7493209423244427~6363975167"/>
+            android:value="ca-app-pub-6374122322136943~8526049124"/>
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />

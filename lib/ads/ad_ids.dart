@@ -8,15 +8,15 @@ import 'package:flutter/foundation.dart';
 ///   개발 중 실제 광고를 클릭하면 무효 트래픽으로 계정이 정지될 수 있으므로.
 /// - 릴리즈 빌드(`--release`, 스토어 배포): 실제 ID.
 ///
-/// Android 실제 ID: AdMob 앱 "Random Roulette" (ca-app-pub-7493209423244427~6363975167), 2026-09-22 등록.
+/// Android 실제 ID: AdMob 앱 "Random Roulette" (ca-app-pub-6374122322136943~8526049124).
 class AdIds {
   AdIds._();
 
   // ── 실제 ID ─────────────────────────────────────────────────────────
   static const _androidReal = _Ids(
-    banner: 'ca-app-pub-7493209423244427/7923276873',
-    interstitial: 'ca-app-pub-7493209423244427/3984031860',
-    rewarded: 'ca-app-pub-7493209423244427/6282892146',
+    banner: 'ca-app-pub-6374122322136943/9232626138',
+    interstitial: 'ca-app-pub-6374122322136943/9041054448',
+    rewarded: 'ca-app-pub-6374122322136943/8452916998',
   );
 
   // TODO(iOS): AdMob 에서 iOS 앱 등록 후 교체
@@ -34,8 +34,12 @@ class AdIds {
     rewarded: 'ca-app-pub-3940256099942544/1712485313',
   );
 
+  /// 릴리즈 빌드를 기기에서 직접 확인할 때는 --dart-define=TEST_ADS=true 로 빌드해 테스트 광고만 받는다.
+  /// (실제 광고를 개발자·자동 탭이 누르면 무효 트래픽으로 계정이 정지된다. 2026-11 정지 원인 후보)
+  static const _forceTest = bool.fromEnvironment('TEST_ADS');
+
   static _Ids get _current {
-    if (kReleaseMode) return Platform.isAndroid ? _androidReal : _iosReal;
+    if (kReleaseMode && !_forceTest) return Platform.isAndroid ? _androidReal : _iosReal;
     return Platform.isAndroid ? _androidTest : _iosTest;
   }
 
